@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ranking</title>
+    <meta charset="utf-8" />
+
+    <!-- wg Bootstrapa ta linijjka pomaga, gdy korzysta się z urządzeń mobilnych -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- linki CSS -->
+    <link rel="stylesheet" href="styles/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/css/games.css" />
+    <link rel="stylesheet" href="styles/css/loader.css" />
+
+</head>
+<body>
+    <!-- Lista gier -->
+    <div>
+        <h2>Najpopularniejsze gry:</h2>
+        <ul id="games" />
+    </div>
+    <!-- Obsługa użytkowników, zrealizowana w jumbotronie przy pomocy kolumn i wierszy -->
+    <div class="jumbotron">
+        <div class=" row">
+            <div class="col">
+                <h2>Obsługa rankingu</h2>
+            </div>
+        </div>
+        <div class=" row">
+            <!-- Przyciski obsługi -->
+            <div class="col-3">
+                <div class="btn-group" role="group">
+                    <input type="button" class="btn btn-primary" value="Szukaj" onclick="find();" />
+                    <input type="button" class="btn btn-primary" value="Dodaj" onclick="add();" />
+                    <input type="button" class="btn btn-primary" value="Edytuj" onclick="edit();" />
+                    <input type="button" class="btn btn-danger" value="Usuń" onclick="remove();" />
+                </div>
+            </div>
+            <!-- Przyciski informacyjne -->
+            <div class="col">
+                <p>
+                    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseImportantInfo" aria-expanded="false">
+                        Ważne INFO!
+                    </button>
+                    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseInfo" aria-expanded="false">
+                        Dość ważne info
+                    </button>
+                </p>
+
+            </div>
+        </div>
+        <div class=" row">
+            <!-- Pola do wpisywania informacji o użyytkownikach -->
+            
+                <div class="col-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">ID</span>
+                        <input type="text" class="form-control" id='userId' placeholder="ID">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Imię</span>
+                        <input type="text" class="form-control" id='rankingFirstName' placeholder="First Name">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Nazwisko</span>
+                        <input type="text" class="form-control" id='rankingSurname' placeholder="Surname">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Punkty</span>
+                        <input type="text" class="form-control" id='rankingScore' placeholder="Score">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Ulubione zwierzę</span>
+                        <input type="text" class="form-control" id='rankingAnimal' placeholder="Favourite Animal">
+                    </div>
+               
+            </div>
+            <!-- Pojawiające się informacje -->
+            <div class="col-4">
+                <div class="collapse" id="collapseImportantInfo">
+                    <div class="card card-body">
+                        Wyszukiwanie i usuwanie odbywa się na podstawie wpisanego ID.
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="collapse" id="collapseInfo">
+                    <div class="card card-body">
+                        Zmiany dokonane przy użyciu obsługi rankingu są widoczne dopiero po odświeżeniu strony.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- Wynik obsługi rankingu -->
+        <div class=" row">
+            <div class="col-1">
+                <h2>Wynik:</h2>
+            </div>
+            <div class="col-4">
+                <p id="user" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Ranking użytkowników wyświetlany przy użyciu karuzeli -->
+    <div id="carouselControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <h2>Aby zobaczyć ranking przewiń!</h2>
+            </div>
+            <div class="carousel-item">
+                <ul id="users" />
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+
+    <!-- Skrypty -->
+    <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="scripts/tether.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/game.js"></script>
+
+</body>
+</html>

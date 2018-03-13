@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.25, 8.5" name="DataClassesRankingDatabase">
+  <DataContextMoniker Name="/DataClassesRankingDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9194c7d1-a1bc-4068-9396-945465011840" absoluteBounds="8.375, 2.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesRankingDatabaseDataContext/PersonalRanking" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c1756e01-db48-4581-9725-89bfa2789363" absoluteBounds="8.39, 2.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="78298e7c-a491-401d-9c6f-c5d8c0b5f891" absoluteBounds="11, 2.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesRankingDatabaseDataContext/UserInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64321add-0bee-4fcb-afeb-8133a5770e67" absoluteBounds="11.015, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11 : 3.19314697265625); (10.375 : 3.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClassesRankingDatabaseDataContext/UserInfo/UserInfo_PersonalRanking" />
+      <nodes>
+        <classShapeMoniker Id="78298e7c-a491-401d-9c6f-c5d8c0b5f891" />
+        <classShapeMoniker Id="9194c7d1-a1bc-4068-9396-945465011840" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dfc43158-fd30-4251-9f99-268dd9bc94d7" absoluteBounds="2, 2.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClassesRankingDatabaseDataContext/Statistic" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9ec2f88-83c9-4934-9d9f-da6dd33544aa" absoluteBounds="2.015, 3.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0d27bea2-3142-420f-9eed-e70dfd897b76" absoluteBounds="4.625, 2.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClassesRankingDatabaseDataContext/Game" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d660e134-23d6-48c7-9d72-c208d916895c" absoluteBounds="4.64, 3.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4 : 3.44314697265625); (4.625 : 3.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClassesRankingDatabaseDataContext/Statistic/Statistic_Game" />
+      <nodes>
+        <classShapeMoniker Id="dfc43158-fd30-4251-9f99-268dd9bc94d7" />
+        <classShapeMoniker Id="0d27bea2-3142-420f-9eed-e70dfd897b76" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

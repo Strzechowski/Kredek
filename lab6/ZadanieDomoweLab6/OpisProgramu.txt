@@ -1,0 +1,10 @@
+W zadaniu u¿ywam api z zesz³ych zajêæ, ale musia³em je trochê zmodyifkowaæ. 
+Wykonywa³o ono operacje tylko na liœcie, podczas robienia zadania 6 doszed³em do wniosku, ¿e brak zmian w bazie danych jest jednak bez sensu. 
+Zmieni³em tylko Controller Rankingu, bo z innych praktycznie nie korzystam.
+
+Pozostawi³em kilka angielskich komentarzy, które by³y w ostatniej pracy domowej.
+
+Aplikacja korzysta z metod : GET, POST, DELETE, PUT
+Nowe komponenty z bootstrapa: Collapse, Carousel, Button group
+
+

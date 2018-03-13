@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ZadanieDomoweLab3" Class="DataClassesZooDataBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-TBU3K31F\SQLEXPRESS;Initial Catalog=ZadanieDomoweLab3;Integrated Security=True" SettingsObjectName="ZadanieDomoweLab4.Properties.Settings" SettingsPropertyName="ZadanieDomoweLab3ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Animals" Member="Animals">
+    <Type Name="Animal">
+      <Column Name="Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameOfTheAnimal" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
+      <Column Name="HowManyAnimals" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="BasicInfoId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeesInfoId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="Animal_WorkSchedule" Member="WorkSchedules" ThisKey="Id" OtherKey="AnimalId" Type="WorkSchedule" />
+      <Association Name="BasicInfo_Animal" Member="BasicInfo" ThisKey="BasicInfoId" OtherKey="Id" Type="BasicInfo" IsForeignKey="true" />
+      <Association Name="EmployeesInfo_Animal" Member="EmployeesInfo" ThisKey="EmployeesInfoId" OtherKey="Id" Type="EmployeesInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BasicInfos" Member="BasicInfos">
+    <Type Name="BasicInfo">
+      <Column Name="Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeOfAnAnimal" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Climate" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
+      <Association Name="BasicInfo_Animal" Member="Animals" ThisKey="Id" OtherKey="BasicInfoId" Type="Animal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Buildings" Member="Buildings">
+    <Type Name="Building">
+      <Column Name="Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameOfTheBuilding" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Association Name="Building_WorkSchedule" Member="WorkSchedules" ThisKey="Id" OtherKey="BuildingId" Type="WorkSchedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employees" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
+      <Column Name="Surname" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
+      <Column Name="PESEL" Type="System.String" DbType="NChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="JobId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="Employee_WorkSchedule" Member="WorkSchedules" ThisKey="Id" OtherKey="EmployeeId" Type="WorkSchedule" />
+      <Association Name="WorkType_Employee" Member="WorkType" ThisKey="JobId" OtherKey="Id" Type="WorkType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmployeesInfos" Member="EmployeesInfos">
+    <Type Name="EmployeesInfo">
+      <Column Name="Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FoodForAnimal" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
+      <Column Name="HowManyTimesFed" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="EmployeesInfo_Animal" Member="Animals" ThisKey="Id" OtherKey="EmployeesInfoId" Type="Animal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Foods" Member="Foods">
+    <Type Name="Food">
+      <Column Name="Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameOfFood" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TicketPrices" Member="TicketPrices">
+    <Type Name="TicketPrice">
+      <Column Name="Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeOfTicket" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Visitors" Member="Visitors">
+    <Type Name="Visitor">
+      <Column Name="Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Hour" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="HowManyVisitors" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkSchedules" Member="WorkSchedules">
+    <Type Name="WorkSchedule">
+      <Column Name="Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BuildingId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AnimalId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="Animal_WorkSchedule" Member="Animal" ThisKey="AnimalId" OtherKey="Id" Type="Animal" IsForeignKey="true" />
+      <Association Name="Building_WorkSchedule" Member="Building" ThisKey="BuildingId" OtherKey="Id" Type="Building" IsForeignKey="true" />
+      <Association Name="Employee_WorkSchedule" Member="Employee" ThisKey="EmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkTypes" Member="WorkTypes">
+    <Type Name="WorkType">
+      <Column Name="Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Job" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
+      <Column Name="Salary" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="WorkType_Employee" Member="Employees" ThisKey="Id" OtherKey="JobId" Type="Employee" />
+    </Type>
+  </Table>
+</Database>

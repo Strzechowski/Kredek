@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClassesPositions">
+  <DataContextMoniker Name="/DataClassesPositionsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="69658468-e648-4bef-89c5-6ea61d1aa13d" absoluteBounds="6.625, 2.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClassesPositionsDataContext/RafalStrzechowski_Position" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac88da60-88fe-4622-9545-824bd80913a6" absoluteBounds="6.64, 3.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

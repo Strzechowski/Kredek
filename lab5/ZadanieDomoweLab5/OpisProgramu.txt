@@ -1,0 +1,8 @@
+Aplikacja zawiera api obs³uguj¹ce u¿ytkowników i ich rankingi oraz gry i zwi¹zane z nimi statystyki. 
+Ma pod³¹czon¹ bazê danych oraz zagnie¿d¿one klasy.
+
+U¿ywaj¹c Postman'a mo¿na sprawdziæ dzia³anie api.
+
+Program posiada te¿ stronê html, na razie jest doœæ uboga w treœæ, ale prawie nie mia³em z takowymi do czynienia (u¿ycie tylko GET).
+Wzorowa³em siê na poradniku Microsoft'u.
+Zostawi³em parê angielskich komentarzy w funkcjach w pliku html, gdy¿ uzna³em ¿e moje wyt³umaczenia nie bêd¹ lepsze.

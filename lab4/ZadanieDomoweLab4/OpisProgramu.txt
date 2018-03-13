@@ -1,0 +1,8 @@
+Inna wersja bazy danych z zoo - umo¿liwia edycje pracowników, zapis tabeli w csv oraz stworzenie prostego pdf'a 
+Program wykorzystuje bazê z poprzedniego zadania.
+
+
+Drobne niedoszlifowania:
+-nie zaj¹³em siê jeszcze rozszerzalnoœi¹ okna/tym co siê dziejê z programem na innych rozdzielczoœciach 
+-nijaki plik PDF
+-brak kontroli nad poprawnoœci¹ PESEL-u

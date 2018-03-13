@@ -1,0 +1,20 @@
+﻿/*Zmiana wyglądu strony przy użyciu CSS*/
+body {
+    background-color: #9bb7f6;
+    margin: 50px auto;
+    font-size: 25px;
+    width: 70em;
+    height: 70em;
+    border-radius: 5%;
+    position: relative;
+}
+
+.carousel-item {
+    justify-content: center;
+    font-size: 1.3em;
+}
+
+
+.jumbotron {
+    background: #638ef2;
+}

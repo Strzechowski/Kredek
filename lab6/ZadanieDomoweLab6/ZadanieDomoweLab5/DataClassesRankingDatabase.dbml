@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ZadanieDomoweLab5" Class="DataClassesRankingDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-TBU3K31F\SQLEXPRESS;Initial Catalog=ZadanieDomoweLab5;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ZadanieDomoweLab5ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PersonalRanking" Member="PersonalRankings">
+    <Type Name="PersonalRanking">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Score" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="UserInfo_PersonalRanking" Member="UserInfo" ThisKey="UserID" OtherKey="ID" Type="UserInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserInfos" Member="UserInfos">
+    <Type Name="UserInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
+      <Column Name="Surname" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
+      <Column Name="EyeColor" Type="System.String" DbType="NVarChar(31)" CanBeNull="true" />
+      <Column Name="FavouriteAnimal" Type="System.String" DbType="NVarChar(31)" CanBeNull="true" />
+      <Association Name="UserInfo_PersonalRanking" Member="PersonalRankings" ThisKey="ID" OtherKey="UserID" Type="PersonalRanking" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Statistics]" Member="Statistics">
+    <Type Name="Statistic">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NumberOfViews" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TimeSpendInGame" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Statistic_Game" Member="Games" ThisKey="ID" OtherKey="StatisticsID" Type="Game" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Games" Member="Games">
+    <Type Name="Game">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameOfGame" Type="System.String" DbType="NVarChar(31) NOT NULL" CanBeNull="false" />
+      <Column Name="LevelOfDifficulty" Type="System.String" DbType="NVarChar(31)" CanBeNull="true" />
+      <Column Name="StatisticsID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Statistic_Game" Member="Statistic" ThisKey="StatisticsID" OtherKey="ID" Type="Statistic" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

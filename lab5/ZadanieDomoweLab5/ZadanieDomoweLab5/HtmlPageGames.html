@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Games App</title>
+</head>
+<body>
+    <!-- Modyfikacja strony przy użyciu CSS  -->
+    <style>
+    body 
+    {
+        background-color: lightblue;
+        font-style: italic;
+    }
+    </style>
+
+    <!-- Ogólna budowa strony -->
+    <div>
+        <h2>All Users</h2>
+        <ul id="users" />
+    </div>
+    <div>
+        <h2>Search user by ID</h2>
+        <input type="text" id="userId" size="5" />
+        <input type="button" value="Search" onclick="find();" />
+        <p id="user" />
+    </div>
+    <div>
+        <h2>All Games</h2>
+        <ul id="games" />
+    </div>
+    
+    <!-- Funkcje -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script>
+        var uri = 'api/users';
+
+        //Ta funkcja obsługuje wyświetlanie wszystkich użykowników
+        $(document).ready(function () {
+            // Send an AJAX request
+            $.getJSON(uri)
+                .done(function (data) {
+                    // On success, 'data' contains a list of products.
+                    $.each(data, function (key, item) {
+                        // Add a list item for the product.
+                        $('<li>', { text: formatUser(item) }).appendTo($('#users'));
+                    });
+                });
+
+        });
+
+        //Ustawia jakie elementy użytkowników są wyświetlane
+        function formatUser(item) {
+            return item.FirstName + ' ' + item.Surname;
+        }
+
+        //Ta funkcja obsługuje wyświetlanie wszystkich gier
+        $(document).ready(function () {
+            // Send an AJAX request
+            $.getJSON('api/games')
+                .done(function (data) {
+                    // On success, 'data' contains a list of products.
+                    $.each(data, function (key, gam) {
+                        // Add a list item for the product.
+                        $('<li>', { text: formatGame(gam) }).appendTo($('#games'));
+                    });
+                });
+
+        });
+
+        //Ustawia jakie elementy gier są wyświetlane
+        function formatGame(gam) {
+            return gam.NameOfGame + '  - level of difficulty: ' + gam.LevelOfDifficulty + '  - number of views: ' + gam.Stats.NumberOfViews;
+        }
+
+        //Funkcja pozwala na wyszukiwanie konkretnego użytkownika po ID
+        function find() {
+            var id = $('#userId').val();
+            $.getJSON(uri + '/' + id)
+                .done(function (data) {
+                    $('#user').text(formatUser(data));
+                })
+                .fail(function (jqXHR, textStatus, err) {
+                    $('#user').text('Error: ' + err);
+                });
+        }
+       
+    </script>
+
+</body>
+</html>

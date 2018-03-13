@@ -1,0 +1,16 @@
+Celem gry jest klikanie na spadaj¹ce p³atki, zanim znikn¹ nam z ekranu.
+Jeœli nie uda nam siê klikn¹æ 3 p³atków to gra siê koñczy.
+Ka¿dy klikniêty p³atek to 1 punkt.
+Ranking u¿ytkowników przechowywany jest w bazie danych i wyœwietla siê na koniec gry.
+Gra dzia³a równie¿ w trybie offline.
+
+
+Obszar, na którym pojawiaj¹ siê p³atki powinien dostosowaæ siê do wielkoœci okna, 
+ale nie sprawdza³em na innym komputerze, wiêc nie mam pewnoœci.
+
+Gra "mruga/œnie¿y", gdy pojawi siê wiêcej p³atków, ustawienie DoubleBuffered na true nie pomaga,
+a nie mam ju¿ czasu na g³êbsze zbadanie problemu.
+
+
+
+

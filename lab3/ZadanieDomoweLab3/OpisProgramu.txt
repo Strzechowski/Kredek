@@ -1,0 +1,4 @@
+Program symuluje bazê danych z ZOO.
+
+Nie by³em pewny jak¹ konwencjê przyj¹æ, jeœli chodzi o tabele w sql.
+Nazwy kolumn s¹ po angielsku, a wype³nienie po polsku.
